@@ -9,7 +9,7 @@ function getDogImage(){
 
 function displayResults(responseJson){
     console.log(responseJson);
-    if(responseJson.status === 'error'){
+    if(responseJson.status === 'error' && responseJson.message === 'Breed not found (master breed does not exist)'){
         $('p').text('Dog breed not found. Please try again');
     } else {
         $('.results-img').replaceWith(
